@@ -1,5 +1,5 @@
 {
-  "name": "@tamedia-pmd/openapi-generator-cli",
+  "name": "@tampmd/openapi-generator-cli",
   "version": "0.0.14",
   "description": "A npm package wrapper for https://github.com/tamedia-pmd/openapi-generator",
   "private": false,
@@ -50,6 +50,6 @@
     "rimraf": "2.6.2"
   },
   "dependencies": {
-    "compare-versions": "3.4.0"
+    "compare-versions": "3.5.1"
   }
 }
