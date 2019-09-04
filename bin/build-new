@@ -6,15 +6,16 @@
     for a new version builds the package(s) for the new version(s).
 */
 
-const lib = require('../lib');
+const lib = require("../lib");
 
-(async function () {
-    const downloadLinks = await lib.getOpenapiGeneratorCliDownloadLinks();
-    const alreadyPublishedVersions = await lib.getAlreadyPublishedVersions();
+(async function() {
+  const {
+    downloadLink,
+    version
+  } = await lib.getOpenapiGeneratorCliDownloadLink();
+  const alreadyPublishedVersions = await lib.getAlreadyPublishedVersion();
 
-    Object.entries(downloadLinks).forEach(([version, downloadLink]) => {
-        if (alreadyPublishedVersions.indexOf(version) === -1) {
-            lib.buildPackage(version, downloadLink);
-        }
-    });
+  if (alreadyPublishedVersions.indexOf(version) === -1) {
+    lib.buildPackage(version, downloadLink);
+  }
 })();
