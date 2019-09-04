@@ -26,7 +26,7 @@ const {registry, tagPrefix} = config;
     const command = (await fs.readdir(path.resolve('./dist'))).map(version => {
         const tag = `${tagPrefix}${version}`;
         const packageDir = path.resolve('./dist', version);
-        return `npm publish ${packageDir} --access=public --registry ${registry} --tag ${tag}`;
+        return `npm publish ${packageDir} --registry ${registry} --tag ${tag}`;
     }).join(';');
 
     const cmd = exec(command);
